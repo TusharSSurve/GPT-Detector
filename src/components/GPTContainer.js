@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 // import styles from "./GPTContainer.module.css";
 
-// const API_KEY = "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";
+const API_KEY = "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";
 const GPTContainer = (props) => {
   useEffect(() => {
     let apiMessage = {
