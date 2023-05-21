@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // import styles from "./GPTContainer.module.css";
 
-const API_KEY = "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";
+// const API_KEY = "";
+const API_KEY = "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";
 const GPTContainer = (props) => {
+  const [error, setError] = useState(null);
   useEffect(() => {
     let apiMessage = {
       role: "user",
@@ -27,13 +29,12 @@ const GPTContainer = (props) => {
       .then((response) => {
         console.log(response);
         console.log(response.choices[0].message.content);
+      })
+      .catch((error) => {
+        setError(error);
       });
   }, []);
 
-  return (
-    <>
-      <h1>Hello</h1>
-    </>
-  );
+  return <></>;
 };
 export default GPTContainer;
