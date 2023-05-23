@@ -14,7 +14,7 @@ const Form = () => {
         spellCheck={false}
         ref={text}
       ></textarea>
-      {/* <button>Check</button> */}
+      <button className={styles.button}>CHECK</button>
     </form>
   );
 };

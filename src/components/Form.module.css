@@ -1,10 +1,12 @@
 .form {
   display: flex;
   width: 550px;
-  margin: 100px auto 0;
+  margin: 70px auto 0;
+  flex-direction: column;
+  gap: 45px;
 }
 .textarea {
-  width: 500px;
+  width: 520px;
   height: 350px;
   display: block;
   resize: none;
@@ -17,4 +19,27 @@
 .textarea:focus {
   outline: none;
   box-shadow: 0 0 15px #36383f inset;
+}
+.button {
+  width: fit-content;
+  margin: 0 auto;
+  color: black;
+  background: white;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.button:hover {
+  color: white;
+  background: #2d2929;
+  border: 1px solid white;
+}
+@media only screen and (max-width: 769px) {
+  .form {
+    width: 90%;
+    margin: 30px auto 0;
+  }
+  .textarea {
+    width: 92%;
+  }
 }
