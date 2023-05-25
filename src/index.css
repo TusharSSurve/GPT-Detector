@@ -14,9 +14,17 @@ code {
 }
 h1 {
   text-align: left;
+  font-family: "Roboto", sans-serif;
   width: 85%;
   margin: 50px auto 0;
   color: white;
+}
+textarea {
+  font-family: "Roboto", sans-serif;
+}
+button {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
 }
 @media only screen and (max-width: 769px) {
   h1 {
