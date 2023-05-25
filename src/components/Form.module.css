@@ -13,6 +13,7 @@
   padding: 10px 15px;
   border-radius: 5px;
   overflow: hidden;
+  overflow-y: scroll;
   border: 0;
   transition: box-shadow 0.5s;
 }
@@ -33,6 +34,40 @@
   color: white;
   background: #2d2929;
   border: 1px solid white;
+}
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  0% {
+    top: -60px;
+  }
+  100% {
+    top: 0;
+  }
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
 }
 @media only screen and (max-width: 769px) {
   .form {
