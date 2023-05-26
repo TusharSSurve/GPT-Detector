@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import styles from "./Form.module.css";
+import Loader from "./Loader";
+import Card from "../global/Card";
 const API_KEY = "";
 // const API_KEY = "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";
 const Form = () => {
@@ -52,7 +54,11 @@ const Form = () => {
 
   return (
     <form onSubmit={submitHander} className={styles.form}>
-      <textarea className={styles.textarea} ref={text}></textarea>
+      <textarea
+        className={styles.textarea}
+        ref={text}
+        placeholder="Enter text to check for AI and ChatGPT Plagiarism"
+      ></textarea>
       {error && (
         <div className={styles.alert}>
           <span>
@@ -63,10 +69,10 @@ const Form = () => {
           </span>
         </div>
       )}
-      {isLoading && <div className={styles.loader}></div>}
       <button className={styles.button} disabled={isLoading}>
         Detect Text
       </button>
+      <Card>{isLoading && <Loader />}</Card>
     </form>
   );
 };
