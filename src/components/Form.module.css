@@ -1,7 +1,7 @@
 .form {
   display: flex;
   width: 550px;
-  margin: 70px auto 0;
+  margin: 50px auto 0;
   flex-direction: column;
   gap: 45px;
 }
@@ -47,14 +47,7 @@
   transform: translateX(-50%);
   animation: fadeIn 0.5s;
 }
-@keyframes fadeIn {
-  0% {
-    top: -60px;
-  }
-  100% {
-    top: 0;
-  }
-}
+
 .closebtn {
   margin-left: 15px;
   color: white;
@@ -68,6 +61,31 @@
 
 .closebtn:hover {
   color: black;
+}
+.loader {
+  margin: 0 auto;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #2d2929;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+@keyframes fadeIn {
+  0% {
+    top: -60px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @media only screen and (max-width: 769px) {
   .form {

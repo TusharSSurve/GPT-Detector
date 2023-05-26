@@ -5,14 +5,17 @@ const API_KEY = "";
 const Form = () => {
   const text = useRef();
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const submitHander = (event) => {
     event.preventDefault();
+
     if (!text.current.value) {
       setError({ message: "Please enter a text" });
       window.scrollTo(0, 0);
       return;
     }
+    setIsLoading(true);
     let apiMessage = {
       role: "user",
       content: `${text.current.value}.Is above paragraph written by chatgpt or gpt-3 or human?Give one word answer`,
@@ -30,20 +33,21 @@ const Form = () => {
       body: JSON.stringify(apiRequestBody),
     })
       .then((response) => {
+        if (!response.ok) {
+          throw new Error("Something went wrong, Please try again later!");
+        }
         return response.json();
       })
       .then((response) => {
+        setIsLoading(false);
         console.log(response);
-        console.log(response.choices[0].message.content);
+        // console.log(response.choices[0].message.content);
       })
       .catch((error) => {
         window.scrollTo(0, 0);
+        setIsLoading(false);
         setError(error);
       });
-  };
-
-  const closePop = () => {
-    setError("");
   };
 
   return (
@@ -54,12 +58,15 @@ const Form = () => {
           <span>
             <strong>Error!</strong> {error.message}
           </span>
-          <span className={styles.closebtn} onClick={closePop}>
+          <span className={styles.closebtn} onClick={() => setError("")}>
             &times;
           </span>
         </div>
       )}
-      <button className={styles.button}>CHECK</button>
+      {isLoading && <div className={styles.loader}></div>}
+      <button className={styles.button} disabled={isLoading}>
+        Detect Text
+      </button>
     </form>
   );
 };
