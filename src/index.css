@@ -11,6 +11,13 @@ h1 {
   margin: 30px auto 0;
   color: white;
 }
+h3 {
+  color: rgb(199, 17, 17);
+  margin: 0;
+}
+h4 {
+  margin: 0;
+}
 textarea {
   font-family: "Roboto", sans-serif;
 }
