@@ -4,7 +4,7 @@ import Loader from "./Loader";
 import Card from "../global/Card";
 import Output from "./Output";
 // const API_KEY = "";
-const API_KEY = "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";
+const API_KEY = "YOUR_API_KEY";
 const Form = () => {
   const text = useRef();
   const [error, setError] = useState("");
